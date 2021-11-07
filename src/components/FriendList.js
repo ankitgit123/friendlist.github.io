@@ -12,6 +12,8 @@ function FriendList() {
     { id: 3, name: "Mary", isSelected: false },
     { id: 4, name: "Lucy", isSelected: false },
     { id: 5, name: "Dexter", isSelected: false },
+    { id: 6, name: "Agiler", isSelected: false },
+    { id: 7, name: "Aminek", isSelected: false },
   ]);
   const [searchText, setsearchText] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
@@ -21,8 +23,34 @@ function FriendList() {
   const [totalPage, setTotalPage] = useState(0);
 
   const NO_RECORDS = 4;
+
+  const fetchData=(pageData)=>{
+    if (friends.length) {
+      let data = [];
+      setAllDatas(pageData);
+      pageData.map((item, index) => {
+        if (index < NO_RECORDS) {
+          data.push(item);
+        }
+        return true;
+      });
+      let total = isInt(allDatas.length, NO_RECORDS);
+      let totalpgs =
+        total !== true
+          ? parseInt(allDatas.length / NO_RECORDS) + 1
+          : friends.length / NO_RECORDS;
+      let pgs = [];
+      for (let i = 1; i <= Number(totalpgs); i++) {
+        pgs.push(i);
+      }
+      setTotalPage(pgs);
+      displayDataPerPage(data);
+    }
+  }
+
   const addFriends = (friend) => {
     if (!friend.name) {
+      alert('Please Enter Name');
       return;
     }
     const newFriends = [friend, ...friends];
@@ -31,6 +59,7 @@ function FriendList() {
     } else {
       setFriends(newFriends);
     }
+    fetchData(newFriends)
   };
 
   const removeFriends = (id) => {
@@ -49,8 +78,9 @@ function FriendList() {
         item.name.toLowerCase().includes(text.toLowerCase())
       );
       setFilteredResults(filteredArr.length ? filteredArr : []);
+      fetchData(filteredArr);
     } else {
-      fetchData();
+      fetchData(friends);
     }
   };
 
@@ -59,55 +89,8 @@ function FriendList() {
     setPageDatas(data);
   };
 
-  const fetchData=()=>{
-    if (friends.length) {
-      let data = [];
-      setAllDatas(friends);
-      friends.map((item, index) => {
-        if (index < NO_RECORDS) {
-          data.push(item);
-        }
-        return true;
-      });
-      let total = isInt(friends.length, NO_RECORDS);
-      let totalpgs =
-        total !== true
-          ? parseInt(friends.length / NO_RECORDS) + 1
-          : friends.length / NO_RECORDS;
-      let pgs = [];
-      for (let i = 1; i <= Number(totalpgs); i++) {
-        pgs.push(i);
-      }
-      setTotalPage(pgs);
-      displayDataPerPage(data);
-    }
-  }
-
   useEffect(() => {
-    async function fetchData() {
-      if (friends.length) {
-        let data = [];
-        setAllDatas(friends);
-        friends.map((item, index) => {
-          if (index < NO_RECORDS) {
-            data.push(item);
-          }
-          return true;
-        });
-        let total = isInt(friends.length, NO_RECORDS);
-        let totalpgs =
-          total !== true
-            ? parseInt(friends.length / NO_RECORDS) + 1
-            : friends.length / NO_RECORDS;
-        let pgs = [];
-        for (let i = 1; i <= Number(totalpgs); i++) {
-          pgs.push(i);
-        }
-        setTotalPage(pgs);
-        displayDataPerPage(data);
-      }
-    }
-    fetchData();
+    fetchData(friends);
   }, [friends]);
 
   function isInt(len, display) {
@@ -184,7 +167,7 @@ function FriendList() {
       <FriendForm listLength={friends.length} onSubmit={addFriends} />
       {filteredResults.length > 0 || searchText !== "" ? (
         <Friends
-          friends={filteredResults}
+          friends={pageDatas}
           removeFriends={removeFriends}
           searchText={searchText}
           setFilteredResults={setFilteredResults}
