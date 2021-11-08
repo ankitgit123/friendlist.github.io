@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/friendlist.github.io/static/css/main.a3101ce2.chunk.css",
-    "main.js": "/friendlist.github.io/static/js/main.3ca474ca.chunk.js",
-    "main.js.map": "/friendlist.github.io/static/js/main.3ca474ca.chunk.js.map",
+    "main.css": "/friendlist.github.io/static/css/main.066e6eb5.chunk.css",
+    "main.js": "/friendlist.github.io/static/js/main.0fa6bfc1.chunk.js",
+    "main.js.map": "/friendlist.github.io/static/js/main.0fa6bfc1.chunk.js.map",
     "runtime-main.js": "/friendlist.github.io/static/js/runtime-main.f9bb365a.js",
     "runtime-main.js.map": "/friendlist.github.io/static/js/runtime-main.f9bb365a.js.map",
-    "static/js/2.d79fcaa1.chunk.js": "/friendlist.github.io/static/js/2.d79fcaa1.chunk.js",
-    "static/js/2.d79fcaa1.chunk.js.map": "/friendlist.github.io/static/js/2.d79fcaa1.chunk.js.map",
+    "static/js/2.24d38f3d.chunk.js": "/friendlist.github.io/static/js/2.24d38f3d.chunk.js",
+    "static/js/2.24d38f3d.chunk.js.map": "/friendlist.github.io/static/js/2.24d38f3d.chunk.js.map",
     "static/js/3.19e390a1.chunk.js": "/friendlist.github.io/static/js/3.19e390a1.chunk.js",
     "static/js/3.19e390a1.chunk.js.map": "/friendlist.github.io/static/js/3.19e390a1.chunk.js.map",
     "index.html": "/friendlist.github.io/index.html",
-    "static/css/main.a3101ce2.chunk.css.map": "/friendlist.github.io/static/css/main.a3101ce2.chunk.css.map",
-    "static/js/2.d79fcaa1.chunk.js.LICENSE.txt": "/friendlist.github.io/static/js/2.d79fcaa1.chunk.js.LICENSE.txt"
+    "static/css/main.066e6eb5.chunk.css.map": "/friendlist.github.io/static/css/main.066e6eb5.chunk.css.map",
+    "static/js/2.24d38f3d.chunk.js.LICENSE.txt": "/friendlist.github.io/static/js/2.24d38f3d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f9bb365a.js",
-    "static/js/2.d79fcaa1.chunk.js",
-    "static/css/main.a3101ce2.chunk.css",
-    "static/js/main.3ca474ca.chunk.js"
+    "static/js/2.24d38f3d.chunk.js",
+    "static/css/main.066e6eb5.chunk.css",
+    "static/js/main.0fa6bfc1.chunk.js"
   ]
 }
